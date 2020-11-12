@@ -1,0 +1,74 @@
+﻿@model RegistroAlumnosYProfesores.Models.HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Alumnos y Profesores";
+}
+
+<div class="alumnos-section">
+    <h2>Lista de alumnos</h2>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Matrícula</th>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Correo electrónico</th>
+                <th>Teléfono</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alumno in Model.Alumnos)
+            {
+                <tr>
+                    <td>@alumno.Matricula</td>
+                    <td>@alumno.Nombre</td>
+                    <td>@alumno.Carrera</td>
+                    <td>@alumno.Email</td>
+                    <td>@alumno.Telefono</td>
+                    <td>
+                        <a asp-controller="Alumnos" asp-action="Ver" asp-route-id="@alumno.Matricula">Ver detalles</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6"><span>Total de registros: @Model.Alumnos.Count</span> </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="profesores-section">
+    <h2>Lista de profesores</h2>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>No. de Empleado</th>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Teléfono</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var profesor in Model.Profesores)
+            {
+                <tr>
+                    <td>@profesor.NoEmpleado</td>
+                    <td>@profesor.Nombre</td>
+                    <td>@profesor.Carrera</td>
+                    <td>@profesor.Telefono</td>
+                    <td>
+                        <a asp-controller="Profesores" asp-action="Ver" asp-route-id="@profesor.NoEmpleado">Ver detalles</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5"><span>Total de registros: @Model.Profesores.Count</span></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

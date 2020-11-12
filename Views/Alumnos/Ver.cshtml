@@ -1,0 +1,33 @@
+﻿@model RegistroAlumnosYProfesores.Models.AlumnoModel
+
+@{
+    ViewData["Title"] = "Ver alumno";
+}
+
+<div class="alumnos-section">
+    <h2>Detalles del alumno</h2>
+    <table class="tabla-detalles">
+        <thead>
+            <tr>
+                <th>Detalles del alumno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Matricula</td>
+            </tr>
+            <tr>
+                <td>@Model.Nombre</td>
+            </tr>
+            <tr>
+                <td>@Model.Carrera</td>
+            </tr>
+            <tr>
+                <td>@Model.Email</td>
+            </tr>
+            <tr>
+                <td>@Model.Telefono</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,30 @@
+﻿@model RegistroAlumnosYProfesores.Models.ProfesorModel
+
+@{
+    ViewData["Title"] = "Ver profesor";
+}
+
+<div class="alumnos-section">
+    <h2>Detalles del profesor</h2>
+    <table class="tabla-detalles">
+        <thead>
+            <tr>
+                <th>Detalles del profesor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.NoEmpleado</td>
+            </tr>
+            <tr>
+                <td>@Model.Nombre</td>
+            </tr>
+            <tr>
+                <td>@Model.Carrera</td>
+            </tr>
+            <tr>
+                <td>@Model.Telefono</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
